@@ -36,7 +36,7 @@ print(popt)
 
 fittedydata = function(xdata,popt[0],popt[1])
 
-
+#plot
 plt.title('BTC Price Chart (Log Scale)',fontsize=34)
 plt.xlabel('Years',fontsize=34)
 plt.ylabel('BTC Price (USD)',fontsize=34)
@@ -48,6 +48,7 @@ plt.yticks(fontsize=25)
 
 plt.semilogy(df['Date'],df['Value'],'k-')
 
+#labels
 colors = ['red','salmon','darkorange','orange','gold','greenyellow','green','olivedrab','limegreen']
 count = 0
 lin = np.linspace(-2,4,9)
@@ -63,9 +64,9 @@ for i in lin:
 
 plt.plot(df['Date'], np.exp(fittedydata), color='black',alpha=0.4)
 
-
 plt.ylim(bottom = 1)
 plt.ylim(top = 500000)
 plt.legend(loc=2,prop={'size': 35})
 
+#show plot
 plt.show()
